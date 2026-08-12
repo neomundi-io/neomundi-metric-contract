@@ -1,5 +1,13 @@
 [🇬🇧 English version](./metric-contract-v0.0.en.md) · [← Repository](./README.md)
 
+> **Note de statut — v0.0**
+>
+> Ce document définit les frontières sémantiques actuelles de la couche de mesure NeoMundi.
+>
+> Les structures JSON et les identifiants présentés dans cette version sont des représentations illustratives des concepts métriques. Ils ne constituent pas encore le schéma définitif du NeoMundi Runtime Interoperability Contract.
+>
+> La représentation exploitable par machine pourra évoluer avec la formalisation du Runtime Interoperability Contract, sans modifier la sémantique sous-jacente de la mesure sauf versionnement explicite.
+
 # NeoMundi Metric Contract
 
 **Version :** 0.0
