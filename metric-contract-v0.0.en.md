@@ -1,5 +1,13 @@
 [🇫🇷 Version française](./metric-contract-v0.0.fr.md) · [← Repository](./README.md)
 
+> **Draft notice — v0.0**
+>
+> This document defines the current semantic boundaries of the NeoMundi measurement layer.
+>
+> JSON structures and identifiers shown in this version are illustrative representations of the metric concepts. They are not yet the definitive NeoMundi Runtime Interoperability schema.
+>
+> The machine-readable representation may evolve as the Runtime Interoperability Contract is formalized, without changing the underlying measurement semantics unless explicitly versioned.
+
 # NeoMundi Metric Contract
 
 **Version:** 0.0
