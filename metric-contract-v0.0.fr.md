@@ -42,6 +42,50 @@ Il ne définit ni la décision de politique ni l’action opérationnelle pouvan
 
 ---
 
+## 2. Concepts fondamentaux
+
+Le NeoMundi Metric Contract distingue quatre concepts liés :
+
+### Observation
+
+Une **observation** est un événement runtime ou un ensemble d’exécutions runtime réalisées dans des conditions déclarées, à partir desquelles des mesures peuvent être produites.
+
+L’observation fournit le contexte dans lequel une mesure existe.
+
+### Métrique
+
+Une **métrique** est une définition versionnée d’une propriété observable mesurée par NeoMundi.
+
+La métrique définit **ce qui est mesuré** et la manière dont ses valeurs doivent être interprétées.
+
+### Mesure
+
+Une **mesure** est la valeur produite par l’application d’une métrique définie et d’un protocole de mesure à une observation réalisée dans des conditions déclarées.
+
+La mesure représente donc un résultat spécifique, et non la définition de la métrique elle-même.
+
+### État
+
+Un **état** est une classification métrologique optionnelle associée à une mesure selon une taxonomie ou une référence de seuil déclarée et versionnée.
+
+Un état décrit une condition métrologique observée.
+
+Il ne constitue ni une décision de politique ni une autorisation d’exécution.
+
+### Relation
+
+La relation conceptuelle est :
+
+**Observation**
+**→ métrique appliquée selon un protocole déclaré**
+**→ mesure**
+**→ état métrologique optionnel**
+
+Ces concepts DOIVENT rester distinguables même lorsqu’ils sont représentés ensemble dans un événement runtime exploitable par machine.
+
+
+---
+
 ## 2. Identité de la métrique
 
 Chaque métrique DOIT exposer une identité stable.
