@@ -40,6 +40,49 @@ It does not define the policy decision or operational action that may result fro
 
 ---
 
+## 2. Core concepts
+
+The NeoMundi Metric Contract distinguishes four related concepts:
+
+### Observation
+
+An **observation** is a runtime event or set of runtime executions under declared conditions from which measurements may be produced.
+
+An observation provides the context in which a measurement exists.
+
+### Metric
+
+A **metric** is a versioned definition of an observable property that NeoMundi measures.
+
+The metric defines **what is being measured** and how its values must be interpreted.
+
+### Measurement
+
+A **measurement** is the value produced by applying a defined metric and measurement protocol to an observation under declared conditions.
+
+The measurement therefore represents a specific result, not the metric definition itself.
+
+### State
+
+A **state** is an optional metrological classification associated with a measurement according to a declared and versioned taxonomy or threshold reference.
+
+A state describes an observed metrological condition.
+
+It does not constitute a policy decision or execution authorization.
+
+### Relationship
+
+The conceptual relationship is:
+
+**Observation**
+**→ Metric applied under a declared protocol**
+**→ Measurement**
+**→ optional Metrological State**
+
+These concepts MUST remain distinguishable even when represented together in a machine-readable runtime event.
+
+---
+
 ## 2. Metric identity
 
 Each metric MUST expose a stable identity.
