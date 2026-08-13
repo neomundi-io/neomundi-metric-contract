@@ -5,9 +5,13 @@ Status: Draft
 Maintainer: NeoMundi
 Scope: Runtime measurement of observable AI-system behaviour
 
-[🇬🇧 English](#english) · [🇫🇷 Français](#fran%C3%A7ais)
+🇬🇧 English · 🇫🇷 Français
+
+<a id="english"></a>
 
 English
+
+🇬🇧 English · 🇫🇷 Français
 
 The NeoMundi Metric Contract defines the semantic boundary of the measurements and signals exposed by the NeoMundi runtime measurement layer.
 
@@ -100,9 +104,11 @@ The machine-readable representation may evolve as the NeoMundi Runtime Interoper
 
 Any evolution that materially changes the meaning of a measurement or signal must remain explicitly versioned.
 
+<a id="francais"></a>
+
 Français
 
-[🇬🇧 English](#english) · [🇫🇷 Français](#fran%C3%A7ais)
+🇬🇧 English · 🇫🇷 Français
 
 Le NeoMundi Metric Contract définit la frontière sémantique des mesures et signaux exposés par la couche de mesure runtime NeoMundi.
 
