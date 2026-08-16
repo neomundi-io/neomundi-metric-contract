@@ -1,60 +1,60 @@
-[🇬🇧 English version](./metric-contract-v0.0.en.md) · [← Repository](./README.md)
+[🇫🇷 Version française](./metric-contract-v0.0.fr.md) · [← Repository](./README.md)
 
 > **Draft notice — v0.0**
 >
-> Ce document définit les frontières sémantiques actuelles de la couche de mesure NeoMundi.
+> This document defines the current semantic boundaries of the NeoMundi measurement layer.
 >
-> Les structures JSON, noms de champs, identifiants, enums et exemples présentés dans cette version constituent des références opérationnelles ou illustratives. Ils ne constituent pas encore le schéma définitif du **NeoMundi Runtime Interoperability Contract**.
+> The JSON structures, field names, identifiers, enums and examples presented in this version are operational or illustrative references. They do not yet constitute the definitive schema of the **NeoMundi Runtime Interoperability Contract**.
 >
-> La représentation exploitable par machine pourra évoluer avec la formalisation de l’interopérabilité. Toute modification qui change matériellement la signification d’une mesure ou d’un signal devra cependant faire l’objet d’un versionnement explicite.
+> The machine-readable representation may evolve as interoperability is formalized. Any change that materially alters the meaning of a measurement or signal must, however, be explicitly versioned.
 
 # NeoMundi Metric Contract
 
-**Version :** 0.0
-**Statut :** Draft
-**Date :** 16 août 2026
-**Maintainer :** NeoMundi
-**Scope :** Mesure runtime du comportement observable des systèmes d’IA
+**Version:** 0.0
+**Status:** Draft
+**Date:** August 16, 2026
+**Maintainer:** NeoMundi
+**Scope:** Runtime measurement of observable AI-system behaviour
 
 ---
 
-## 0. Langage normatif
+## 0. Normative language
 
-Dans ce document :
+In this document:
 
-* **DOIT / NE DOIT PAS** désigne une exigence sémantique obligatoire ;
-* **DEVRAIT / NE DEVRAIT PAS** désigne une exigence recommandée à laquelle une implémentation peut déroger avec justification ;
-* **PEUT** désigne un comportement autorisé mais non obligatoire.
+* **MUST / MUST NOT** denotes a binding semantic requirement;
+* **SHOULD / SHOULD NOT** denotes a recommended requirement from which an implementation may depart with justification;
+* **MAY** denotes permitted but non-mandatory behaviour.
 
-La portée normative de ce contrat est limitée à la **signification, l’interprétation et aux frontières sémantiques** de la couche de mesure NeoMundi.
+The normative scope of this contract is limited to the **meaning, interpretation and semantic boundaries** of the NeoMundi measurement layer.
 
-Les noms exacts de champs, leur emplacement JSON, les enums, la sérialisation, le transport et la négociation de version ne deviennent pas normatifs du seul fait qu’ils apparaissent dans les représentations actuelles.
+Exact field names, JSON locations, enums, serialization, transport and version negotiation do not become normative merely because they appear in current representations.
 
-Ces éléments relèvent principalement du **Runtime Interoperability Contract**.
-
----
-
-## 1. Objet
-
-Le **NeoMundi Metric Contract** définit la signification, les conditions d’interprétation, les limitations et les frontières des mesures et signaux produits par la couche de mesure runtime NeoMundi.
-
-Il définit **ce que signifie une mesure NeoMundi**.
-
-Il ne définit pas la politique, la décision opérationnelle ou l’autorisation d’exécution qu’un système externe peut dériver de cette mesure.
-
-> **Le Metric Contract NE DOIT PAS définir une décision de politique, une autorisation d’exécution ou une action opérationnelle comme signification intrinsèque d’une mesure NeoMundi.**
-
-**NeoMundi mesure. Le système consommateur conserve l’autorité de décision et d’action.**
+These elements primarily belong to the **Runtime Interoperability Contract**.
 
 ---
 
-## 2. Référence runtime actuelle
+## 1. Purpose
 
-La Draft v0.0 est ancrée sur la structure du payload d’observation actuellement exposé par l’API NeoMundi.
+The **NeoMundi Metric Contract** defines the meaning, interpretation conditions, limitations and boundaries of measurements and signals produced by the NeoMundi runtime measurement layer.
 
-Exemple de structure :
+It defines **what a NeoMundi measurement means**.
 
-```json
+It does not define the policy, operational decision or execution authorization that an external system may derive from that measurement.
+
+> **The Metric Contract MUST NOT define a policy decision, execution authorization or operational action as the intrinsic meaning of a NeoMundi measurement.**
+
+**NeoMundi measures. The consuming system retains authority over decisions and actions.**
+
+---
+
+## 2. Current runtime reference
+
+Draft v0.0 is anchored in the structure of the observation payload currently exposed by the NeoMundi API.
+
+Example structure:
+
+```json id="rf62sa"
 {
   "schema_version": "neomundi_observation_payload_v0.1",
   "observation_id": "nm-syn-001",
@@ -67,204 +67,204 @@ Exemple de structure :
 }
 ```
 
-Cette structure constitue l’**ancrage opérationnel actuel** du contrat.
+This structure constitutes the contract's **current operational anchor**.
 
-Elle ne constitue pas un JSON Schema normatif complet.
+It does not constitute a complete normative JSON Schema.
 
-Le Metric Contract **NE DOIT PAS** introduire une représentation machine concurrente qui modifierait la signification des mesures effectivement exposées par NeoMundi.
+The Metric Contract **MUST NOT** introduce a competing machine representation that alters the meaning of measurements actually exposed by NeoMundi.
 
-Les exigences exactes de structure, de sérialisation et de transport sont différées vers le **Runtime Interoperability Contract**.
+Exact structure, serialization and transport requirements are deferred to the **Runtime Interoperability Contract**.
 
 ---
 
-## 3. Concepts fondamentaux
+## 3. Fundamental concepts
 
-Le Metric Contract distingue plusieurs concepts liés mais non interchangeables.
+The Metric Contract distinguishes several related but non-interchangeable concepts.
 
 ### 3.1 Observation
 
-Une **observation** est un événement runtime ou un ensemble d’exécutions runtime dans des conditions déclarées, à partir desquels une ou plusieurs mesures peuvent être produites.
+An **observation** is a runtime event or set of runtime executions under declared conditions from which one or more measurements may be produced.
 
-Une mesure NeoMundi **DOIT rester attribuable à l’observation à laquelle elle appartient**.
+A NeoMundi measurement **MUST remain attributable to the observation to which it belongs**.
 
-Une observation synthétique **NE DOIT PAS être présentée comme une observation de production**.
+A synthetic observation **MUST NOT be represented as a production observation**.
 
-### 3.2 Métrique
+### 3.2 Metric
 
-Une **métrique** définit une propriété observable mesurée par NeoMundi ainsi que la sémantique permettant d’interpréter ses valeurs ou signaux.
+A **metric** defines an observable property measured by NeoMundi together with the semantics required to interpret its values or signals.
 
-### 3.3 Mesure
+### 3.3 Measurement
 
-Une **mesure** est un résultat obtenu à partir d’une observation selon une méthode ou un protocole déclaré.
+A **measurement** is a result obtained from an observation according to a declared method or protocol.
 
-La mesure représente un résultat spécifique.
+The measurement represents a specific result.
 
-Elle ne constitue pas, à elle seule, une décision externe.
+It does not, by itself, constitute an external decision.
 
-### 3.4 État métrologique
+### 3.4 Metrological state
 
-Une mesure **PEUT** être associée à un état ou une classification métrologique selon une taxonomie ou un référentiel déclaré et versionné.
+A measurement **MAY** be associated with a metrological state or classification according to a declared and versioned taxonomy or reference.
 
-Un état métrologique décrit une condition observée.
+A metrological state describes an observed condition.
 
-Il ne constitue pas automatiquement une décision de politique ou une autorisation d’exécution.
+It does not automatically constitute a policy decision or execution authorization.
 
-### 3.5 Relation conceptuelle
+### 3.5 Conceptual relationship
 
-La relation générale est :
+The general relationship is:
 
-**Observation → mesure ou signal → interprétation métrologique éventuelle → consommation externe**
+**Observation → measurement or signal → optional metrological interpretation → external consumption**
 
-La décision ou l’action résultante reste extérieure au Metric Contract.
-
----
-
-## 4. Contexte source
-
-Une mesure n’existe pas indépendamment de son contexte d’observation.
-
-Les informations déclarées sur la source, le modèle, le provider, l’environnement, la configuration ou le protocole peuvent contribuer à son interprétation.
-
-Une information qui n’est pas explicitement présente ou déclarée dans le contexte d’observation **NE DOIT PAS être silencieusement déduite comme mesurée ou connue**.
-
-En particulier, un alias de modèle ne constitue pas à lui seul une preuve :
-
-* de l’identité du provider ;
-* de la version exacte du modèle ;
-* de la configuration d’exécution ;
-* d’un environnement runtime particulier.
-
-Les éléments inconnus, indisponibles ou non déclarés doivent rester distinguables des éléments effectivement observés ou déclarés.
+The resulting decision or action remains outside the Metric Contract.
 
 ---
 
-## 5. Mesure et contexte d’interprétation
+## 4. Source context
 
-Une valeur ou un signal NeoMundi ne doit pas être interprété isolément lorsque son sens dépend matériellement :
+A measurement does not exist independently of its observation context.
 
-* des conditions d’observation ;
-* de la couverture ;
-* du statut de mesure ;
-* des limitations connues ;
-* de la frontière de mesure applicable.
+Declared information about the source, model, provider, environment, configuration or protocol may contribute to its interpretation.
 
-> Une mesure ou un signal **NE DOIT PAS être interprété indépendamment des limitations et frontières applicables lorsque celles-ci affectent matériellement sa signification**.
+Information that is not explicitly present or declared in the observation context **MUST NOT be silently inferred as measured or known**.
 
-La présence d’une valeur numérique n’implique pas à elle seule que toutes les dimensions de mesure aient été évaluées.
+In particular, a model alias alone does not constitute proof of:
+
+* provider identity;
+* the exact model version;
+* the execution configuration;
+* a particular runtime environment.
+
+Unknown, unavailable or undeclared elements must remain distinguishable from elements that were actually observed or declared.
 
 ---
 
-## 6. Statut et couverture de mesure
+## 5. Measurement and interpretation context
 
-Une observation peut être complète, partielle, non évaluée ou autrement limitée.
+A NeoMundi value or signal must not be interpreted in isolation when its meaning materially depends on:
 
-Une observation partielle **NE DOIT PAS être représentée comme complète**.
+* observation conditions;
+* coverage;
+* measurement status;
+* known limitations;
+* the applicable measurement boundary.
 
-La présence d’une valeur dans une observation partielle **NE DOIT PAS impliquer que toutes les dimensions de mesure ont été évaluées**.
+> A measurement or signal **MUST NOT be interpreted independently of applicable limitations and boundaries when those materially affect its meaning**.
 
-Une couverture incomplète connue **DOIT rester distinguable d’une couverture complète** lors de l’interprétation.
+The presence of a numerical value does not, by itself, imply that all measurement dimensions were assessed.
 
-Le nom exact du champ, son format et son encodage relèvent du Runtime Interoperability Contract.
+---
+
+## 6. Measurement status and coverage
+
+An observation may be complete, partial, not assessed or otherwise limited.
+
+A partial observation **MUST NOT be represented as complete**.
+
+The presence of a value within a partial observation **MUST NOT imply that all measurement dimensions were assessed**.
+
+Known incomplete coverage **MUST remain distinguishable from complete coverage** during interpretation.
+
+The exact field name, format and encoding belong to the Runtime Interoperability Contract.
 
 ---
 
 ## 7. `stability_score`
 
-`stability_score` décrit un niveau de stabilité comportementale observée dans les conditions déclarées de mesure.
+`stability_score` describes a level of observed behavioural stability under the declared measurement conditions.
 
-Il ne mesure pas intrinsèquement la vérité factuelle.
+It does not intrinsically measure factual truth.
 
-> **`stability_score` NE DOIT PAS être interprété comme une mesure de vérité factuelle.**
+> **`stability_score` MUST NOT be interpreted as a measure of factual truth.**
 
-`stability_score` **NE DOIT PAS**, à lui seul, établir :
+`stability_score` **MUST NOT**, by itself, establish:
 
-* la sécurité ;
-* la conformité ;
-* l’admissibilité ;
-* l’autorisation d’exécution ;
-* la qualité globale d’un système.
+* safety;
+* compliance;
+* admissibility;
+* execution authorization;
+* the overall quality of a system.
 
-Une stabilité élevée **PEUT** coexister avec une sortie factuellement incorrecte.
+High stability **MAY** coexist with a factually incorrect output.
 
-Une variation comportementale peut également coexister avec des sorties factuellement correctes.
+Behavioural variation may also coexist with factually correct outputs.
 
-### Principe
+### Principle
 
-> **Stabilité ≠ vérité.**
+> **Stability is not truth.**
 
 ---
 
 ## 8. `coherence_score`
 
-`coherence_score` décrit une propriété de cohérence observée selon la définition et les conditions de mesure applicables.
+`coherence_score` describes an observed coherence property according to the applicable definition and measurement conditions.
 
-`coherence_score` **NE DOIT PAS**, à lui seul, être interprété comme :
+`coherence_score` **MUST NOT**, by itself, be interpreted as:
 
-* une validation factuelle ;
-* une validation de sécurité ;
-* une détermination de conformité ;
-* une autorisation d’exécution.
+* factual validation;
+* safety validation;
+* a compliance determination;
+* execution authorization.
 
-Il peut être consommé avec d’autres mesures ou signaux.
+It may be consumed together with other measurements or signals.
 
-Le Metric Contract ne prescrit pas la politique qu’un système externe doit appliquer à partir de cette information.
+The Metric Contract does not prescribe the policy an external system should apply based on this information.
 
 ---
 
 ## 9. `factual_validity_signal`
 
-Un signal de validité factuelle runtime représente une information produite dans les limites de la méthode de mesure qui lui est associée.
+A runtime factual-validity signal represents information produced within the limits of its associated measurement method.
 
-Un signal fondé uniquement sur des éléments disponibles au runtime **NE DOIT PAS être présenté comme une vérification indépendante de la vérité lorsqu’aucune validation indépendante n’a été effectuée**.
+A signal based only on runtime-available evidence **MUST NOT be presented as independent verification of truth when no independent validation has been performed**.
 
-Une valeur `null`, `unknown` ou `not_assessed` **NE DOIT PAS être interprétée comme** :
+A `null`, `unknown` or `not_assessed` value **MUST NOT be interpreted as**:
 
-* une validation factuelle ;
-* une absence d’erreur ;
-* un risque factuel nul.
+* factual validation;
+* absence of error;
+* zero factual risk.
 
-Les taxonomies, états et enums observés dans les représentations actuelles restent descriptifs tant qu’ils ne sont pas explicitement stabilisés et versionnés.
+Taxonomies, states and enums observed in current representations remain descriptive until they are explicitly stabilized and versioned.
 
 ---
 
 ## 10. `semantic_variability_signal`
 
-`semantic_variability_signal` décrit une variabilité sémantique observée dans les conditions applicables.
+`semantic_variability_signal` describes semantic variability observed under the applicable conditions.
 
-Une faible variabilité sémantique **NE DOIT PAS être interprétée comme une preuve de correction factuelle**.
+Low semantic variability **MUST NOT be interpreted as evidence of factual correctness**.
 
-Une variabilité élevée **NE DOIT PAS**, à elle seule :
+Elevated variability **MUST NOT**, by itself:
 
-* identifier la cause de la variation ;
-* identifier quelle sortie est correcte ;
-* constituer une preuve d’erreur.
+* identify the cause of the variation;
+* identify which output is correct;
+* constitute proof of error.
 
-Il s’agit d’un signal de mesure, non d’une décision de politique.
+It is a measurement signal, not a policy decision.
 
 ---
 
-## 11. Latence et coût
+## 11. Latency and cost
 
-NeoMundi peut exposer des mesures, signaux ou bandes relatifs à la latence et au coût.
+NeoMundi may expose measurements, signals or bands relating to latency and cost.
 
-Dans la Draft v0.0, le Metric Contract ne fige pas :
+In Draft v0.0, the Metric Contract does not freeze:
 
-* les enums définitifs ;
-* les seuils exacts ;
-* les frontières entre bandes ;
-* les conséquences opérationnelles ou de routage.
+* definitive enums;
+* exact thresholds;
+* band boundaries;
+* operational or routing consequences.
 
-Une valeur explicitement inconnue de latence ou de coût **NE DOIT PAS être silencieusement interprétée comme une valeur mesurée**.
+An explicitly unknown latency or cost value **MUST NOT be silently interpreted as a measured value**.
 
-Les définitions structurelles et les seuils éventuels devront être spécifiés et versionnés séparément.
+Structural definitions and any future thresholds must be specified and versioned separately.
 
 ---
 
 ## 12. `risk_signal`
 
-Un `risk_signal` NeoMundi constitue un signal de mesure ou d’interprétation dans les limites déclarées de la métrique.
+A NeoMundi `risk_signal` constitutes a measurement or interpretation signal within the declared limits of the metric.
 
-Il **NE DOIT PAS automatiquement signifier** :
+It **MUST NOT automatically mean**:
 
 * `ALLOW`;
 * `BLOCK`;
@@ -277,213 +277,213 @@ Il **NE DOIT PAS automatiquement signifier** :
 * `ADMISSIBLE`;
 * `NON_ADMISSIBLE`.
 
-Un système consommateur **PEUT** utiliser ce signal comme entrée de sa propre politique.
+A consuming system **MAY** use this signal as an input to its own policy.
 
-La décision résultante reste extérieure au Metric Contract.
+The resulting decision remains outside the Metric Contract.
 
-Les niveaux, types et enums de risque actuellement observés ne deviennent pas automatiquement des catégories normatives de la Draft v0.0.
-
----
-
-## 13. Limitations connues
-
-Une mesure NeoMundi peut comporter des limitations relatives :
-
-* à la méthode ;
-* aux données disponibles ;
-* au protocole ;
-* à la couverture ;
-* au contexte ;
-* au domaine de mesure ;
-* à l’interprétation possible.
-
-Toute limitation qui affecte matériellement l’interprétation d’une mesure **DOIT rester sémantiquement associée à cette mesure lorsqu’elle est interprétée ou transmise pour soutenir une décision**.
-
-Le format exact, l’emplacement et la sérialisation de ces limitations relèvent de l’interopérabilité.
+Risk levels, types and enums currently observed do not automatically become normative categories in Draft v0.0.
 
 ---
 
-## 14. Frontière de mesure
+## 13. Known limitations
 
-Une mesure NeoMundi décrit une propriété observable dans un périmètre déclaré.
+A NeoMundi measurement may include limitations relating to:
 
-Elle ne constitue pas automatiquement une conclusion générale sur le système observé.
+* the method;
+* available data;
+* the protocol;
+* coverage;
+* context;
+* the measurement domain;
+* possible interpretation.
 
-> **Une mesure NeoMundi NE DOIT PAS, à elle seule, être interprétée comme établissant la vérité, la sécurité, une autorité, une permission downstream ou l’admissibilité d’une exécution, sauf si une future métrique explicitement versionnée le définit autrement.**
+Any limitation that materially affects interpretation of a measurement **MUST remain semantically associated with that measurement when it is interpreted or transmitted to support a decision**.
 
-Cette frontière constitue l’un des principes normatifs fondamentaux du Metric Contract.
-
----
-
-## 15. Séparation entre mesure et décision
-
-NeoMundi est responsable de la sémantique déclarée de ses mesures.
-
-Le système consommateur reste responsable de la politique ou de l’action opérationnelle qu’il dérive de ces mesures.
-
-Des infrastructures externes **PEUVENT**, par exemple, utiliser une mesure NeoMundi pour :
-
-* journaliser ;
-* vérifier ;
-* régénérer ;
-* rerouter ;
-* escalader ;
-* demander une supervision humaine ;
-* interrompre un workflow ;
-* alimenter un processus de conformité ;
-* produire ou enrichir un artefact d’evidence.
-
-Cette liste est illustrative et non exhaustive.
-
-Aucune de ces actions ne constitue la signification intrinsèque de la mesure.
+The exact format, location and serialization of those limitations belong to interoperability.
 
 ---
 
-## 16. Neutralité vis-à-vis de l’infrastructure
+## 14. Measurement boundary
 
-Le Metric Contract **NE DOIT PAS imposer un usage downstream comme interprétation unique d’une mesure**.
+A NeoMundi measurement describes an observable property within a declared scope.
 
-Une même mesure **PEUT** être consommée :
+It does not automatically constitute a general conclusion about the observed system.
 
-* par plusieurs infrastructures ;
-* dans plusieurs architectures ;
-* pour plusieurs finalités.
+> **A NeoMundi measurement MUST NOT, by itself, be interpreted as establishing truth, safety, authority, downstream permission or execution admissibility, unless a future explicitly versioned metric defines otherwise.**
 
-La logique de politique propre à chaque infrastructure reste extérieure au Metric Contract.
-
-Cette séparation permet à NeoMundi de fournir une couche de mesure commune sans imposer l’architecture de décision qui la consomme.
+This boundary is one of the fundamental normative principles of the Metric Contract.
 
 ---
 
-## 17. Valeurs inconnues, nulles et non évaluées
+## 15. Separation between measurement and decision
 
-Les états suivants ne sont pas sémantiquement équivalents :
+NeoMundi is responsible for the declared semantics of its measurements.
 
-* valeur mesurée ;
-* valeur indisponible ;
-* `null` ;
-* `unknown` ;
+The consuming system remains responsible for the policy or operational action it derives from those measurements.
+
+External infrastructures **MAY**, for example, use a NeoMundi measurement to:
+
+* log;
+* verify;
+* regenerate;
+* reroute;
+* escalate;
+* request human supervision;
+* interrupt a workflow;
+* support a compliance process;
+* produce or enrich an evidence artifact.
+
+This list is illustrative and non-exhaustive.
+
+None of these actions constitutes the intrinsic meaning of the measurement.
+
+---
+
+## 16. Infrastructure neutrality
+
+The Metric Contract **MUST NOT impose one downstream use as the unique interpretation of a measurement**.
+
+The same measurement **MAY** be consumed:
+
+* by multiple infrastructures;
+* within multiple architectures;
+* for multiple purposes.
+
+Infrastructure-specific policy logic remains outside the Metric Contract.
+
+This separation allows NeoMundi to provide a common measurement layer without imposing the decision architecture that consumes it.
+
+---
+
+## 17. Unknown, null and non-assessed values
+
+The following states are not semantically equivalent:
+
+* measured value;
+* unavailable value;
+* `null`;
+* `unknown`;
 * `not_assessed`.
 
-`null` **NE DOIT PAS être interprété comme zéro**.
+`null` **MUST NOT be interpreted as zero**.
 
-`unknown` **NE DOIT PAS être interprété comme une catégorie mesurée, faible ou élevée**.
+`unknown` **MUST NOT be interpreted as a measured, low or high category**.
 
-`not_assessed` **NE DOIT PAS être interprété comme une absence de risque ou comme une validation réussie**.
+`not_assessed` **MUST NOT be interpreted as absence of risk or successful validation**.
 
-La distinction entre valeurs mesurées, inconnues, indisponibles et non évaluées **DOIT être préservée sémantiquement**.
+The distinction between measured, unknown, unavailable and non-assessed values **MUST be preserved semantically**.
 
-Les règles exactes d’encodage relèvent de l’interopérabilité.
-
----
-
-## 18. Mesures partielles
-
-Une observation ou une mesure peut être partielle.
-
-Une observation partielle **NE DOIT PAS être présentée comme complète**.
-
-Une valeur disponible dans une observation partielle **NE DOIT PAS impliquer que toutes les dimensions de mesure ont été évaluées**.
-
-Les systèmes consommateurs **DEVRAIENT** tenir compte de la couverture déclarée lors de l’interprétation de mesures partielles.
+Exact encoding rules belong to interoperability.
 
 ---
 
-## 19. Traçabilité
+## 18. Partial measurements
 
-La représentation actuelle peut notamment comporter des identifiants tels que :
+An observation or measurement may be partial.
+
+A partial observation **MUST NOT be represented as complete**.
+
+A value available within a partial observation **MUST NOT imply that all measurement dimensions were assessed**.
+
+Consuming systems **SHOULD** consider declared coverage when interpreting partial measurements.
+
+---
+
+## 19. Traceability
+
+The current representation may include identifiers such as:
 
 * `observation_id`;
 * `source_batch_id`;
 * `trace_id`;
-* un timestamp ;
-* des références de version.
+* a timestamp;
+* version references.
 
-Une mesure **DEVRAIT rester attribuable à son observation d’origine**.
+A measurement **SHOULD remain attributable to its originating observation**.
 
-La Draft v0.0 ne fixe pas encore la structure obligatoire de traçabilité.
+Draft v0.0 does not yet freeze the mandatory traceability structure.
 
-Les exigences concernant :
+Requirements concerning:
 
-* hashes ;
-* signatures ;
-* reçus ;
-* identifiants obligatoires ;
-* intégrité cryptographique ;
-* artefacts d’evidence ;
+* hashes;
+* signatures;
+* receipts;
+* mandatory identifiers;
+* cryptographic integrity;
+* evidence artifacts;
 
-relèvent du Runtime Interoperability Contract ou de spécifications dédiées.
-
----
-
-## 20. Confidentialité et données non exposées
-
-Le Metric Contract décrit les données et mesures exposées par l’interface de mesure.
-
-Il n’implique pas un accès aux données internes de calcul d’un système d’IA.
-
-Les exemples synthétiques actuels peuvent ne pas exposer, notamment :
-
-* les prompts bruts ;
-* les sorties brutes du modèle ;
-* certaines informations provider ;
-* des données client ;
-* des structures propriétaires.
-
-Cette observation ne constitue pas, dans la Draft v0.0, une interdiction normative universelle.
-
-Les exigences de confidentialité, de sécurité et d’exposition des données devront être définies dans les spécifications appropriées.
+belong to the Runtime Interoperability Contract or dedicated specifications.
 
 ---
 
-## 21. Frontière avec le Runtime Interoperability Contract
+## 20. Confidentiality and non-exposed data
 
-Le **Metric Contract** définit la sémantique des mesures et signaux.
+The Metric Contract describes the data and measurements exposed by the measurement interface.
 
-Le **Runtime Interoperability Contract** définit, ou définira, la manière dont les objets correspondants sont échangés et consommés entre systèmes.
+It does not imply access to the internal computation data of an AI system.
 
-Il pourra notamment spécifier :
+Current synthetic examples may not expose, among other things:
 
-* les structures machine-readable ;
-* les champs requis ;
-* les types ;
-* les enums ;
-* la sérialisation ;
-* la compatibilité ;
-* la négociation de version ;
-* les contraintes d’intégration.
+* raw prompts;
+* raw model outputs;
+* certain provider information;
+* customer data;
+* proprietary structures.
 
-Le Metric Contract **NE DOIT PAS figer des détails de transport ou d’interopérabilité qui n’ont pas encore été validés**.
+This observation does not constitute a universal normative prohibition in Draft v0.0.
 
-L’architecture conceptuelle est donc :
-
-**exécution IA → observation NeoMundi → mesure ou signal NeoMundi → interopérabilité → système consommateur → décision ou action externe**
+Confidentiality, security and data-exposure requirements must be defined in the appropriate specifications.
 
 ---
 
-## 22. Versionnement sémantique
+## 21. Boundary with the Runtime Interoperability Contract
 
-Une modification matérielle de la signification d’une mesure ou d’un signal **DOIT être explicitement versionnée**.
+The **Metric Contract** defines the semantics of measurements and signals.
 
-Cela concerne notamment les changements affectant substantiellement :
+The **Runtime Interoperability Contract** defines, or will define, how the corresponding objects are exchanged and consumed between systems.
 
-* la propriété mesurée ;
-* la définition sémantique ;
-* le domaine d’interprétation ;
-* les limitations fondamentales ;
-* le sens d’une valeur ou d’un signal.
+It may notably specify:
 
-Les observations historiques **DEVRAIENT rester interprétables selon la version sémantique sous laquelle elles ont été produites**.
+* machine-readable structures;
+* required fields;
+* types;
+* enums;
+* serialization;
+* compatibility;
+* version negotiation;
+* integration constraints.
 
-Les changements de structure ou de sérialisation qui ne modifient pas la signification **PEUVENT** relever exclusivement du versionnement du schéma ou de l’interopérabilité.
+The Metric Contract **MUST NOT freeze transport or interoperability details that have not yet been validated**.
+
+The conceptual architecture is therefore:
+
+**AI execution → NeoMundi observation → NeoMundi measurement or signal → interoperability → consuming system → external decision or action**
 
 ---
 
-## 23. Exemple de référence opérationnelle
+## 22. Semantic versioning
 
-L’exemple suivant illustre la structure actuelle autour de laquelle la Draft v0.0 est construite :
+A material change in the meaning of a measurement or signal **MUST be explicitly versioned**.
 
-```json
+This includes changes that materially affect:
+
+* the measured property;
+* the semantic definition;
+* the interpretation domain;
+* fundamental limitations;
+* the meaning of a value or signal.
+
+Historical observations **SHOULD remain interpretable according to the semantic version under which they were produced**.
+
+Structural or serialization changes that do not alter meaning **MAY** be handled exclusively through schema or interoperability versioning.
+
+---
+
+## 23. Operational reference example
+
+The following example illustrates the current structure around which Draft v0.0 is built:
+
+```json id="cj1qix"
 {
   "schema_version": "neomundi_observation_payload_v0.1",
   "observation_id": "nm-syn-001",
@@ -496,85 +496,85 @@ L’exemple suivant illustre la structure actuelle autour de laquelle la Draft v
 }
 ```
 
-### Statut de cet exemple
+### Status of this example
 
-**Exemple de référence opérationnelle — ne constitue pas un JSON Schema normatif complet.**
+**Operational reference example — not a complete normative JSON Schema.**
 
-En particulier :
+In particular:
 
-* les valeurs d’exemple ne sont pas normatives ;
-* les identifiants d’exemple ne sont pas normatifs ;
-* les noms et emplacements exacts des champs ne sont pas figés par le Metric Contract ;
-* les enums observés ne sont pas automatiquement normatifs ;
-* les exigences exactes de transport restent soumises au Runtime Interoperability Contract.
+* example values are non-normative;
+* example identifiers are non-normative;
+* exact field names and locations are not frozen by the Metric Contract;
+* observed enums are not automatically normative;
+* exact transport requirements remain subject to the Runtime Interoperability Contract.
 
-Dans cet exemple, `synthetic: true` indique explicitement qu’il s’agit d’une observation synthétique.
+In this example, `synthetic: true` explicitly indicates that the observation is synthetic.
 
-Elle ne doit pas être présentée comme une observation de production.
-
----
-
-## 24. Éléments explicitement différés
-
-La Draft v0.0 ne fige pas encore :
-
-* le JSON Schema définitif ;
-* la liste définitive des champs obligatoires ;
-* les noms définitifs de tous les champs ;
-* les enums définitifs ;
-* le protocole de transport ;
-* la négociation de version ;
-* les reçus cryptographiques ;
-* les signatures et hashes ;
-* le packaging d’evidence ;
-* les règles de divulgation du provider ;
-* les valeurs exactes des seuils ;
-* les frontières exactes des bandes ;
-* les règles automatiques de routage ;
-* les règles automatiques d’arrêt ;
-* la détermination de conformité ;
-* la détermination d’admissibilité ;
-* l’autorisation d’exécution.
-
-Ces éléments peuvent relever :
-
-* du **Runtime Interoperability Contract** ;
-* de spécifications d’evidence ;
-* de configurations produit ;
-* de la politique du système consommateur ;
-* de futures spécifications explicitement versionnées.
+It must not be presented as a production observation.
 
 ---
 
-## 25. Noyau normatif v0.0
+## 24. Explicitly deferred elements
 
-La Draft v0.0 concentre volontairement ses exigences normatives sur un nombre limité de frontières durables :
+Draft v0.0 does not yet freeze:
 
-1. Une mesure **DOIT** rester attribuable à son observation.
-2. Une observation synthétique **NE DOIT PAS** être présentée comme une observation de production.
-3. Une information non déclarée **NE DOIT PAS** être silencieusement déduite comme mesurée ou connue.
-4. Une mesure partielle **NE DOIT PAS** être présentée comme complète.
-5. La stabilité **NE DOIT PAS** être interprétée comme la vérité factuelle.
-6. La cohérence **NE DOIT PAS**, à elle seule, être interprétée comme une validation factuelle.
-7. Un signal factuel runtime **NE DOIT PAS** être présenté comme une vérification indépendante de la vérité lorsqu’il ne repose pas sur une validation indépendante.
-8. La variabilité sémantique **NE DOIT PAS** être traitée comme une preuve de correction factuelle ni comme une identification de la sortie correcte.
-9. Un signal de risque **NE DOIT PAS** devenir automatiquement une décision de politique ou d’exécution.
-10. Les limitations matérielles de mesure **DOIVENT** rester sémantiquement associées à l’interprétation.
-11. Une mesure NeoMundi **NE DOIT PAS**, à elle seule, établir la vérité, la sécurité, une autorité, une permission downstream ou l’admissibilité d’une exécution.
-12. Les états inconnus, nuls ou non évalués **NE DOIVENT PAS** être silencieusement transformés en valeurs mesurées.
-13. Toute modification sémantique matérielle **DOIT** être explicitement versionnée.
-14. Le Metric Contract **NE DOIT PAS** figer des détails de transport ou d’interopérabilité non validés.
-15. Le système consommateur conserve l’autorité sur les décisions et actions qu’il dérive des mesures NeoMundi.
+* the definitive JSON Schema;
+* the definitive list of required fields;
+* the definitive names of all fields;
+* definitive enums;
+* the transport protocol;
+* version negotiation;
+* cryptographic receipts;
+* signatures and hashes;
+* evidence packaging;
+* provider disclosure rules;
+* exact threshold values;
+* exact band boundaries;
+* automatic routing rules;
+* automatic stop rules;
+* compliance determination;
+* admissibility determination;
+* execution authorization.
 
-Ce noyau volontairement réduit vise à rendre la Draft v0.0 plus robuste qu’un contrat comportant de nombreuses obligations structurelles encore prématurées.
+These elements may belong to:
+
+* the **Runtime Interoperability Contract**;
+* evidence specifications;
+* product configuration;
+* consuming-system policy;
+* future explicitly versioned specifications.
 
 ---
 
-## 26. Principe fondamental
+## 25. Normative core v0.0
 
-**NeoMundi fournit des mesures et signaux contextualisés portant sur le comportement observable des systèmes d’IA dans des frontières runtime déclarées.**
+Draft v0.0 deliberately concentrates its normative requirements on a limited number of durable boundaries:
 
-Ces mesures peuvent être consommées par plusieurs systèmes, infrastructures et usages sans transférer à NeoMundi l’autorité de décision downstream.
+1. A measurement **MUST** remain attributable to its observation.
+2. A synthetic observation **MUST NOT** be represented as a production observation.
+3. Undeclared information **MUST NOT** be silently inferred as measured or known.
+4. A partial measurement **MUST NOT** be represented as complete.
+5. Stability **MUST NOT** be interpreted as factual truth.
+6. Coherence **MUST NOT**, by itself, be interpreted as factual validation.
+7. A runtime factual signal **MUST NOT** be presented as independent verification of truth when it is not based on independent validation.
+8. Semantic variability **MUST NOT** be treated as proof of factual correctness or as identification of the correct output.
+9. A risk signal **MUST NOT** automatically become a policy or execution decision.
+10. Material measurement limitations **MUST** remain semantically associated with interpretation.
+11. A NeoMundi measurement **MUST NOT**, by itself, establish truth, safety, authority, downstream permission or execution admissibility.
+12. Unknown, null or non-assessed states **MUST NOT** be silently converted into measured values.
+13. Any material semantic change **MUST** be explicitly versioned.
+14. The Metric Contract **MUST NOT** freeze unvalidated transport or interoperability details.
+15. The consuming system retains authority over the decisions and actions it derives from NeoMundi measurements.
+
+This deliberately reduced normative core is intended to make Draft v0.0 more robust than a contract containing numerous structural obligations that remain premature.
+
+---
+
+## 26. Fundamental principle
+
+**NeoMundi provides contextualized measurements and signals about observable AI-system behaviour within declared runtime boundaries.**
+
+These measurements may be consumed by multiple systems, infrastructures and use cases without transferring downstream decision authority to NeoMundi.
 
 > **Measured by NeoMundi.**
 > **Used according to the authority of the consuming system.**
