@@ -104,6 +104,13 @@ Any evolution that materially changes the meaning of a measurement or signal mus
 
 ## 🇫🇷 Français
 
+🇬🇧 English · 🇫🇷 Français
+
+**Measurement Reference Framework:**  
+[measurement_reference_framework_en.md](./measurement_reference_framework_en.md)
+
+---
+
 Le **NeoMundi Metric Contract** définit la frontière sémantique des mesures et signaux exposés par la couche de mesure runtime NeoMundi.
 
 Cette **Draft v0.0** est ancrée sur la structure du payload d’observation actuellement exposé par l’API NeoMundi :
