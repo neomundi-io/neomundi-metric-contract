@@ -1,3 +1,6 @@
+- 🇬🇧 [NeoMundi Measurement Reference Framework](./measurement_reference_framework_en.md)
+- 🇫🇷 [Cadre de référence de la mesure NeoMundi](./measurement_reference_framework_fr.md)
+
 # Cadre de référence de la mesure NeoMundi
 
 **Version :** 0.1
