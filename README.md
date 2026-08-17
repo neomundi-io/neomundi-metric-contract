@@ -9,10 +9,10 @@
 
 ---
 
-🇫🇷 Français · 🇬🇧 English
+🇬🇧 English · 🇫🇷 Français
 
-**Cadre de référence de la mesure :**  
-[measurement_reference_framework_fr.md](./measurement_reference_framework_fr.md)
+**Measurement Reference Framework:**  
+[measurement_reference_framework_en.md](./measurement_reference_framework_en.md)
 
 ---
 
