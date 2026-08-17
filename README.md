@@ -9,6 +9,13 @@
 
 ---
 
+🇬🇧 English · 🇫🇷 Français
+
+**Measurement Reference Framework:**  
+[measurement_reference_framework_en.md](./measurement_reference_framework_en.md)
+
+---
+
 <a id="english"></a>
 
 ## 🇬🇧 English
