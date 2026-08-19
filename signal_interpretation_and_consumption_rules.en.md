@@ -1,7 +1,9 @@
-Signal Interpretation & Consumption Rules
-Version: 0.1
-Status: Experimental / pre-freeze
-Date: 2026-08-19
+**Document version:** 0.1  
+**Status:** Experimental / pre-freeze  
+**Standardization status:** Work in progress  
+**Version date:** 2026-08-19  
+
+> This version provides a stable reference point for experimental consumer profiles and implementations. It does not represent a final or frozen NeoMundi standard. Material semantic changes require a new document version.
 
 # NeoMundi Metric Contract
 
