@@ -1,3 +1,8 @@
+Signal Interpretation & Consumption Rules
+Version: 0.1
+Status: Experimental / pre-freeze
+Date: 2026-08-19
+
 # NeoMundi Metric Contract
 
 **Canonical runtime measurement and consumer contract for NeoMundi signals**
