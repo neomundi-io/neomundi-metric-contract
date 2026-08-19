@@ -14,6 +14,9 @@
 **Measurement Reference Framework:**  
 [measurement_reference_framework_en.md](./measurement_reference_framework_en.md)
 
+**Signal Interpretation & Consumption Rules:**  
+[signal_interpretation_and_consumption_rules.fr.md](./signal_interpretation_and_consumption_rules.fr.md)
+
 ---
 
 <a id="english"></a>
