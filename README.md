@@ -5,7 +5,9 @@
 **Mainteneur :** NeoMundi  
 **Périmètre :** mesure runtime du comportement observable des systèmes d’IA
 
-[🇬🇧 English](./README.md) · [🇫🇷 Français](./README_FR.md)
+[English contract](./metric-contract-v0.0.en.md) · [Contrat français](./metric-contract-v0.0.fr.md)
+
+[**Comprendre les mesures →**](READING_MEASUREMENTS.fr.md) · [Understand the measurements](READING_MEASUREMENTS.md)
 
 ## Comprendre ce que signifient les mesures NeoMundi — et ce qu’elles ne prouvent pas
 
@@ -137,7 +139,6 @@ signal devra rester explicitement versionnée.
 ```text
 neomundi-metric-contract/
 ├── README.md
-├── README_FR.md
 ├── measurement_reference_framework_en.md
 ├── signal_interpretation_and_consumption_rules.en.md
 ├── signal_interpretation_and_consumption_rules.fr.md
