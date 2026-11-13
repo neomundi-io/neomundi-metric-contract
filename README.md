@@ -9,6 +9,8 @@
 
 [**Comprendre les mesures →**](READING_MEASUREMENTS.fr.md) · [Understand the measurements](READING_MEASUREMENTS.md)
 
+**Évaluateurs — lecture et limites :** [Français](EVALUATORS.fr.md) · [English](EVALUATORS.md). Guide explicatif, pas certification de calibration ni inventaire de production.
+
 ## Comprendre ce que signifient les mesures NeoMundi — et ce qu’elles ne prouvent pas
 
 Le NeoMundi Metric Contract définit la frontière sémantique des mesures et
