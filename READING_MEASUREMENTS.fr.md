@@ -36,6 +36,9 @@ La publication de formules exactes doit être rapprochée du code réellement
 déployé, de sa version et des droits de diffusion. Cette page n'annonce pas
 qu'une formule complète et reproductible est déjà publiée.
 
+## Comprendre les évaluateurs
+Consulter le [guide de lecture des évaluateurs](EVALUATORS.fr.md) ([EN](EVALUATORS.md)) pour les limites des signaux, leur état, la provenance, la comparabilité et les conditions de calibration. Ce guide n'est pas un inventaire des évaluateurs en production.
+
 ## Où lire aujourd'hui
 - [Contrat sémantique FR](metric-contract-v0.0.fr.md) · [EN](metric-contract-v0.0.en.md) — Draft v0.0.
 - [Cadre de référence FR](measurement_reference_framework_fr.md) · [EN](measurement_reference_framework_en.md).
