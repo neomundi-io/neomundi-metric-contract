@@ -32,6 +32,9 @@ Meaning and aggregation need to be understandable. Publication of exact formulas
 must be reconciled with the deployed code, its version and publication rights.
 This page does not claim that a complete reproducible formula is already public.
 
+## Understand the evaluators
+See the [evaluator reading guide](EVALUATORS.md) ([FR](EVALUATORS.fr.md)) for what signal families can and cannot establish, measurement status, provenance, comparability and calibration boundaries. This is not a current production evaluator inventory.
+
 ## Read the current documents
 - [Semantic contract EN](metric-contract-v0.0.en.md) · [FR](metric-contract-v0.0.fr.md) — Draft v0.0.
 - [Reference framework EN](measurement_reference_framework_en.md) · [FR](measurement_reference_framework_fr.md).
