@@ -1,5 +1,15 @@
 # NeoMundi Metric Contract
 
+### Measured signals. Clear meaning. Decisions remain yours.
+
+**Une mesure n'a de valeur que si l'on sait ce qu'elle signifie.** Le Metric Contract fournit le langage partagé pour lire, comparer et utiliser les signaux NeoMundi dans différents systèmes, sans confondre mesure et décision.
+
+**One measurement primitive. Multiple applications. Multiple infrastructures.**
+
+**[Lire les mesures](READING_MEASUREMENTS.fr.md)** · **[Understand the measurements](READING_MEASUREMENTS.md)** · **[Interopérabilité](https://github.com/neomundi-io/neomundi-measurement-interoperability)**
+
+---
+
 **Version :** 0.0  
 **Statut :** Draft  
 **Mainteneur :** NeoMundi  
@@ -11,7 +21,9 @@
 
 **Évaluateurs — lecture et limites :** [Français](EVALUATORS.fr.md) · [English](EVALUATORS.md). Guide explicatif, pas certification de calibration ni inventaire de production.
 
-## Comprendre ce que signifient les mesures NeoMundi — et ce qu’elles ne prouvent pas
+## Understand your AI measurements — and use them with confidence
+
+### Comprendre les mesures NeoMundi, sans perdre leur sens
 
 Le NeoMundi Metric Contract définit la frontière sémantique des mesures et
 signaux exposés par la NeoMundi Runtime Measurement Layer.
