@@ -1,6 +1,8 @@
-# NeoMundi Metric Contract
+<div align="center">
 
-[**Français**](README_FR.md) · [English](README.md)
+[![Français](https://img.shields.io/badge/FR-Fran%C3%A7ais-2563eb?style=flat-square)](README_FR.md) · [![English](https://img.shields.io/badge/EN-English-2563eb?style=flat-square)](README.md)
+
+# NeoMundi Metric Contract
 
 ### Des signaux mesurés. Un sens précis. Vous gardez la décision.
 
@@ -9,6 +11,8 @@
 **Une primitive de mesure. Plusieurs applications. Plusieurs infrastructures.**
 
 **[Comprendre les mesures](READING_MEASUREMENTS.fr.md)** · **[Interopérabilité](https://github.com/neomundi-io/neomundi-measurement-interoperability)**
+
+</div>
 
 ---
 
