@@ -1,6 +1,8 @@
-# NeoMundi Metric Contract
+<div align="center">
 
-[English](README.md) · [**Français**](README_FR.md)
+[![English](https://img.shields.io/badge/EN-English-2563eb?style=flat-square)](README.md) · [![Français](https://img.shields.io/badge/FR-Fran%C3%A7ais-2563eb?style=flat-square)](README_FR.md)
+
+# NeoMundi Metric Contract
 
 ### Measured signals. Clear meaning. Decisions remain yours.
 
@@ -9,6 +11,8 @@
 **One measurement primitive. Multiple applications. Multiple infrastructures.**
 
 **[Understand the measurements](READING_MEASUREMENTS.md)** · **[Interoperability](https://github.com/neomundi-io/neomundi-measurement-interoperability)**
+
+</div>
 
 ---
 
