@@ -1,65 +1,60 @@
 # NeoMundi Metric Contract
 
+[English](README.md) · [**Français**](README_FR.md)
+
 ### Measured signals. Clear meaning. Decisions remain yours.
 
-**Une mesure n'a de valeur que si l'on sait ce qu'elle signifie.** Le Metric Contract fournit le langage partagé pour lire, comparer et utiliser les signaux NeoMundi dans différents systèmes, sans confondre mesure et décision.
+**A measurement is only useful when you know what it means.** The Metric Contract provides a shared language for reading, comparing and using NeoMundi signals across systems, while keeping measurement and decision-making distinct.
 
 **One measurement primitive. Multiple applications. Multiple infrastructures.**
 
-**[Lire les mesures](READING_MEASUREMENTS.fr.md)** · **[Understand the measurements](READING_MEASUREMENTS.md)** · **[Interopérabilité](https://github.com/neomundi-io/neomundi-measurement-interoperability)**
+**[Understand the measurements](READING_MEASUREMENTS.md)** · **[Interoperability](https://github.com/neomundi-io/neomundi-measurement-interoperability)**
 
 ---
 
-**Version :** 0.0  
-**Statut :** Draft  
-**Mainteneur :** NeoMundi  
-**Périmètre :** mesure runtime du comportement observable des systèmes d’IA
+**Version:** 0.0  
+**Status:** Draft  
+**Maintainer:** NeoMundi  
+**Scope:** Runtime measurement of observable AI system behavior
 
-[English contract](./metric-contract-v0.0.en.md) · [Contrat français](./metric-contract-v0.0.fr.md)
+[English measurement contract](./metric-contract-v0.0.en.md)
 
-[**Comprendre les mesures →**](READING_MEASUREMENTS.fr.md) · [Understand the measurements](READING_MEASUREMENTS.md)
+[**Understand the measurements →**](READING_MEASUREMENTS.md)
 
-**Évaluateurs — lecture et limites :** [Français](EVALUATORS.fr.md) · [English](EVALUATORS.md). Guide explicatif, pas certification de calibration ni inventaire de production.
+**Evaluators — interpretation and limits:** [English guide](EVALUATORS.md). An explanatory guide, not a calibration certification or a production inventory.
 
-## Understand your AI measurements — and use them with confidence
+## Understand NeoMundi measurements — and use them without losing their meaning
 
-### Comprendre les mesures NeoMundi, sans perdre leur sens
+The NeoMundi Metric Contract defines the semantic boundaries of measurements and signals exposed by the NeoMundi Runtime Measurement Layer.
 
-Le NeoMundi Metric Contract définit la frontière sémantique des mesures et
-signaux exposés par la NeoMundi Runtime Measurement Layer.
+It provides a common language to:
 
-Il fournit le langage commun nécessaire pour :
+- interpret measurement signals consistently;
+- distinguish measured, partial, unknown and not-evaluated values;
+- preserve their meaning across versions and infrastructures;
+- consume measurements in audit, observability, governance, insurance and decision-support systems;
+- keep measurement, policy, authorization and execution separate.
 
-- interpréter les signaux de mesure de manière cohérente ;
-- distinguer les valeurs mesurées, partielles, inconnues et non évaluées ;
-- préserver leur signification entre les versions et les infrastructures ;
-- consommer les mesures dans des systèmes d’audit, d’observabilité, de
-  gouvernance, d’assurance et d’aide à la décision ;
-- maintenir une séparation entre mesure, politique, autorisation et exécution.
+> **NeoMundi defines measurement semantics. Consuming systems retain authority over interpretation, policy and decisions.**
 
-> **NeoMundi définit la sémantique de mesure. Le système consommateur conserve
-> l’autorité d’interprétation, de politique et de décision.**
+### Get started
 
-### Commencer
-
-| Besoin | Référence |
-|---|---|
-| Comprendre le cadre de mesure | [Measurement Reference Framework — EN](./measurement_reference_framework_en.md) |
-| Appliquer les règles d’interprétation et de consommation | [FR](./signal_interpretation_and_consumption_rules.fr.md) · [EN](./signal_interpretation_and_consumption_rules.en.md) |
-| Lire le Metric Contract complet | [FR](./metric-contract-v0.0.fr.md) · [EN](./metric-contract-v0.0.en.md) |
-| Produire des mesures NeoMundi | [Runtime Measurement Layer](https://github.com/neomundi-io/neomundi-runtime-measurement) |
-| Échanger les mesures entre systèmes | [Measurement Interoperability](https://github.com/neomundi-io/neomundi-measurement-interoperability) |
-| Créer un compte et une clé API | [Plateforme NeoMundi](https://controltower.neomundi.io/welcome) |
+| Need | Reference |
+| --- | --- |
+| Understand the measurement framework | [Measurement Reference Framework](./measurement_reference_framework_en.md) |
+| Apply interpretation and consumption rules | [Signal interpretation and consumption rules](./signal_interpretation_and_consumption_rules.en.md) |
+| Read the full Metric Contract | [English contract](./metric-contract-v0.0.en.md) |
+| Produce NeoMundi measurements | [Runtime Measurement Layer](https://github.com/neomundi-io/neomundi-runtime-measurement) |
+| Exchange measurements between systems | [Measurement Interoperability](https://github.com/neomundi-io/neomundi-measurement-interoperability) |
+| Create an account and API key | [NeoMundi platform](https://controltower.neomundi.io/welcome) |
 
 ---
 
-## Objet
+## Purpose
 
-Le **NeoMundi Metric Contract** définit la frontière sémantique des mesures et
-signaux exposés par la NeoMundi Runtime Measurement Layer.
+The **NeoMundi Metric Contract** defines the semantic boundaries of measurements and signals exposed by the NeoMundi Runtime Measurement Layer.
 
-Cette **version Draft v0.0** est ancrée dans la structure du payload
-d’observation actuellement exposé par l’API NeoMundi :
+This **Draft v0.0** is grounded in the observation payload structure currently exposed by the NeoMundi API:
 
 ```json
 {
@@ -74,85 +69,75 @@ d’observation actuellement exposé par l’API NeoMundi :
 }
 ```
 
-Le Metric Contract explique la **signification, l’interprétation et les
-limites** des mesures et signaux contenus dans ce payload.
+The Metric Contract explains the **meaning, interpretation and limits** of the measurements and signals in this payload.
 
-Il ne définit **ni la décision de politique, ni l’autorisation d’exécution, ni
-l’action opérationnelle** qu’un système externe peut dériver de ces mesures.
+It does **not define policy decisions, execution authorization or operational actions** that an external system might derive from these measurements.
 
-> **NeoMundi mesure. Le système consommateur conserve l’autorité de décision et
-> d’action.**
+> **NeoMundi measures. The consuming system retains authority over decisions and actions.**
 
 ## Metric Contract v0.0
 
-→ [Lire la version française complète](./metric-contract-v0.0.fr.md)
+→ [Read the full English contract](./metric-contract-v0.0.en.md)
 
-## Ce que définit le contrat
+## What the contract defines
 
-Le contrat définit actuellement l’interprétation sémantique de :
+The contract currently defines the semantic interpretation of:
 
-- l’objet d’observation NeoMundi ;
-- le versionnement du payload ;
-- le contexte source ;
-- le statut et la couverture de mesure ;
-- `stability_score` ;
-- `coherence_score` ;
-- `factual_validity_signal` ;
-- `semantic_variability_signal` ;
-- les bandes de latence et de coût ;
-- `risk_signal` ;
-- les limitations connues ;
-- la frontière de mesure ;
-- les identifiants de traçabilité ;
-- les valeurs inconnues, nulles ou non évaluées ;
-- les mesures partielles ;
-- la séparation entre mesure et décision ;
-- la neutralité vis-à-vis de l’infrastructure ;
-- la frontière avec l’interopérabilité des mesures.
+- the NeoMundi observation object;
+- payload versioning;
+- source context;
+- measurement status and coverage;
+- `stability_score`;
+- `coherence_score`;
+- `factual_validity_signal`;
+- `semantic_variability_signal`;
+- latency and cost bands;
+- `risk_signal`;
+- known limitations;
+- the measurement boundary;
+- traceability identifiers;
+- unknown, null or not-evaluated values;
+- partial measurements;
+- separation of measurement and decision-making;
+- infrastructure neutrality;
+- the boundary with measurement interoperability.
 
-## Source de vérité
+## Source of truth
 
-Le Metric Contract n’introduit pas de représentation machine parallèle.
+The Metric Contract introduces no parallel machine-readable representation.
 
-Ses définitions sémantiques sont ancrées dans la structure effectivement exposée
-par l’API NeoMundi.
+Its semantic definitions are grounded in the structure actually exposed by the NeoMundi API.
 
-Les exemples de référence actuels sont explicitement identifiés comme
-synthétiques (`synthetic: true`) et servent à documenter la structure du payload
-et la sémantique des mesures.
+Current reference examples are explicitly marked as synthetic (`synthetic: true`). They document the payload structure and measurement semantics.
 
-Ils ne sont **pas** présentés comme des observations de production.
+They are **not** presented as production observations.
 
-## Metric Contract et Measurement Interoperability
+## Metric Contract and Measurement Interoperability
 
-Le **Metric Contract** définit ce que signifient les mesures et signaux NeoMundi.
+The **Metric Contract** defines what NeoMundi measurements and signals mean.
 
-Le contrat **Measurement Interoperability** définit comment les enregistrements
-de mesure sont structurés, versionnés, échangés et consommés entre des systèmes
-indépendants, notamment leur provenance, leur intégrité et les frontières de
-responsabilité.
+The **Measurement Interoperability** contract defines how measurement records are structured, versioned, exchanged and consumed across independent systems, including their provenance, integrity and responsibility boundaries.
 
-Les deux contrats portent donc sur des couches distinctes :
+The two contracts address distinct layers:
 
-**sémantique de mesure → interopérabilité → décision ou action externe**
+**measurement semantics → interoperability → external decision or action**
 
-## Statut Draft
+## Draft status
 
-La version **0.0** constitue une première spécification sémantique.
+Version **0.0** is an initial semantic specification.
 
-La représentation exploitable par machine pourra évoluer avec la formalisation
-du contrat NeoMundi Measurement Interoperability.
+The machine-consumable representation may evolve as the NeoMundi Measurement Interoperability contract is formalized.
 
-Toute évolution modifiant matériellement la signification d’une mesure ou d’un
-signal devra rester explicitement versionnée.
+Any change that materially alters the meaning of a measurement or signal must remain explicitly versioned.
 
 ---
 
-## Structure du dépôt
+## Repository structure
 
 ```text
 neomundi-metric-contract/
 ├── README.md
+├── README_FR.md
 ├── measurement_reference_framework_en.md
 ├── signal_interpretation_and_consumption_rules.en.md
 ├── signal_interpretation_and_consumption_rules.fr.md
@@ -160,11 +145,10 @@ neomundi-metric-contract/
 └── metric-contract-v0.0.fr.md
 ```
 
-Des schémas lisibles par machine et des artefacts d’interopérabilité
-supplémentaires pourront être introduits à mesure que la spécification mûrit.
+Additional machine-readable schemas and interoperability artifacts may be introduced as the specification matures.
 
 ---
 
 **NeoMundi Metric Contract — Draft v0.0**
 
-*Mesuré par NeoMundi. Utilisé selon l’autorité du système consommateur.*
+*Measured by NeoMundi. Used under the authority of the consuming system.*
