@@ -6,6 +6,8 @@
 
 ### Measured signals. Clear meaning. Decisions remain yours.
 
+**Interpret runtime AI measurements consistently to support monitoring over time and operational decision-making.**
+
 **A measurement is only useful when you know what it means.** The Metric Contract provides a shared language for reading, comparing and using NeoMundi signals across systems, while keeping measurement and decision-making distinct.
 
 **One measurement primitive. Multiple applications. Multiple infrastructures.**
