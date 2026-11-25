@@ -6,6 +6,8 @@
 
 ### Des signaux mesurés. Un sens précis. Vous gardez la décision.
 
+**Interprétez les mesures des IA en exécution de manière cohérente pour éclairer la surveillance dans la durée et le pilotage opérationnel.**
+
 **Une mesure n'a de valeur que si l'on sait ce qu'elle signifie.** Le Metric Contract fournit le langage partagé pour lire, comparer et utiliser les signaux NeoMundi dans différents systèmes, sans confondre mesure et décision.
 
 **Une primitive de mesure. Plusieurs applications. Plusieurs infrastructures.**
